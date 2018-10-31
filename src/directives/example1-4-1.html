@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue.js!</title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+    <!-- View -->
+    <div id="one_way">
+        <!--
+            지금까지 살펴본 디렉티브들은 모두 단방향 디렉티브입니다.
+            단방향인 것을 확인하기 위해 웹브라우저에서 Input Text Box의 값을 바꿔봅니다.
+            값을 바꾼 뒤 Vue.js devtools를 통해 모델 객체의 'message'를 살펴보면,
+            모델 객체의 값이 변하지 않는다는 것을 확인 할 수 있습니다.
+
+            즉, 단반향 디렉티브에서는 HTML 요소에서 값을 변경하더라도 모델 객체의 값은 바뀌지 않습니다.
+        -->
+        <input type="text" :value="message">
+    </div>
+
+<script type="text/javascript">
+
+    // Model
+    var model = {
+        message: 'v-bind 디렉티브',
+    };
+
+    // View Model
+    var simple = new Vue({
+        el: '#one_way',
+        data: model
+    })
+</script>
+</body>
+</html>

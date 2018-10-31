@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue.js!</title>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+    <div id="account">
+        예금액 : <input type="text" v-model="amount" />
+        <!--
+            Vue 객체의 data 속성 값에 따라 렌더링 여부를 결정 할 수 있는 디렉티브는
+            v-show, v-if, v-else, v-else-if가 있습니다.
+
+            v-if 디렉티브와 v-show 디렉티브의 차이는 실제 렌더링 여부에 있습니다.
+            v-if 디렉티브는 조건에 부합되지 않으면 렌더링을 하지 않는 반면,
+            v-show 디렉티브는 일단 HTML 요소를 렌더링한 후에 display 스타일 속성으로 화면에 보여줄지 결정합니다.
+        -->
+        <img v-if="amount < 0" src="../images/error.png" title="마이너스는 허용하지 않습니다"
+             style="width:15px; height: 15px; vertical-align: middle"/>
+        <!--
+            따라서 자주 화면이 변경 되는 부분에 대해서는 v-if 디렉티브보다는 v-show 디렉티브를 사용하는 것이 바람직합니다.
+        -->
+    </div>
+
+<script type="text/javascript">
+    var simple1 = new Vue({
+        el: '#account',
+        data: {
+            amount: 0
+        }
+    })
+</script>
+</body>
+</html>
